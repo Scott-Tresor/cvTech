@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Personne } from '../../model/personne';
 
 @Component({
   selector: 'app-cv',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CvComponent implements OnInit {
 
+  personnes: Personne[];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.personnes = [
+      new Personne(1,'scott','tresor',25,'cott.jpg','developpeur',77777),
+      new Personne(2,'tresor','kasenda',25,'scott.jpg','ingenieur',74744)
+    ]
   }
 
 }

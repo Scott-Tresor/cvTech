@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Personne } from '../../model/personne';
 
 @Component({
   selector: 'app-liste-cv',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./liste-cv.component.css']
 })
 export class ListeCvComponent implements OnInit {
+
+  @Input() personnes: Personne[];
 
   constructor() { }
 

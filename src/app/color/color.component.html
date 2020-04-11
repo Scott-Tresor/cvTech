@@ -1,0 +1,21 @@
+<app-navbar (sendEventProperty)="process($event)" [navProperty]="color"></app-navbar>
+<app-navbar [navProperty] ="color"></app-navbar>
+
+<div [style.backgroundColor]="color">
+    <p [style.fontSize] = "font">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus cumque repellat facilis porro sapiente quaerat iusto voluptatum voluptates ut cupiditate eos aut culpa mollitia nulla id, error inventore a enim.
+    </p>
+</div>
+
+<input 
+    [(ngModel)]="font"
+    type="text" 
+>
+{{ font }}
+
+<input 
+    [(ngModel)]="color" 
+    type="text" 
+>
+
+{{ color }}

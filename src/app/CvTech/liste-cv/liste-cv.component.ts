@@ -8,11 +8,11 @@ import { Personne } from '../../model/personne';
 })
 export class ListeCvComponent implements OnInit {
 
-  @Input() personnes: Personne[];
+  @Input() personnes: Personne [];
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

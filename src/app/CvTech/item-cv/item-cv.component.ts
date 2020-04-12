@@ -8,12 +8,12 @@ import { Personne } from '../../model/personne';
 })
 export class ItemCvComponent implements OnInit {
 
-  @Input() personnes: Personne;
-  
+  @Input() personne: Personne;
+
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.personnes)
+  ngOnInit() {
+    console.log(this.personne.name);
   }
 
 }

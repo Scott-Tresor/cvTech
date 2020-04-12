@@ -8,15 +8,15 @@ import { Personne } from '../../model/personne';
 })
 export class CvComponent implements OnInit {
 
-  personnes: Personne[];
+  personnes: Personne [];
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.personnes = [
       new Personne(1,'scott','tresor',25,'cott.jpg','developpeur',77777),
       new Personne(2,'tresor','kasenda',25,'scott.jpg','ingenieur',74744)
-    ]
+    ];
   }
 
 }

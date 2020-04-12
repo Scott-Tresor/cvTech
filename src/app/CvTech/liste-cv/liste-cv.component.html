@@ -1,4 +1,4 @@
 <ul class="list-group list-group-flush">
-    <app-item-cv [personne]="personnes[0]"></app-item-cv>
-    <app-item-cv [personne]="personnes[1]"></app-item-cv>
+    <app-item-cv (selectedPersonne)="selectPersonne($event)" [personne]="personnes[0]"></app-item-cv>
+    <app-item-cv (selectedPersonne)="selectPersonne($event)" [personne]="personnes[1]"></app-item-cv>
 </ul>

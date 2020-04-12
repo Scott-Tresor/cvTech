@@ -4,19 +4,29 @@ import { Personne } from '../../model/personne';
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
-  styleUrls: ['./cv.component.css']
+  styleUrls: []
 })
 export class CvComponent implements OnInit {
 
   personnes: Personne [];
+  selectedPersonne: Personne;
 
   constructor() { }
 
-  ngOnInit() {
+  user(){
     this.personnes = [
-      new Personne(1,'scott','tresor',25,'cott.jpg','developpeur',77777),
-      new Personne(2,'ilunga','kasenda',26,'ilunga.jpg','ingenieur',34567),
+        new  Personne(1,'scott','tresor',25,'cott.jpg','developpeur',77777),
+        new Personne(2,'ilunga','kasenda',26,'ilunga.jpg','ingenieur',34567),
     ];
+  }
+
+  ngOnInit() {
+    this.user();
+  }
+
+  selectPersonne(personne)
+  {
+    this.selectedPersonne = personne;
   }
 
 }

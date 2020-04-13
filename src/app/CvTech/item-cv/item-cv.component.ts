@@ -13,12 +13,7 @@ export class ItemCvComponent implements OnInit {
 
   constructor() { }
 
-
-
-  ngOnInit(): void {
-    console.log(this.personne.name);
-    console.log(this.selectPersonne());
-
+  ngOnInit(){
   }
 
   selectPersonne()

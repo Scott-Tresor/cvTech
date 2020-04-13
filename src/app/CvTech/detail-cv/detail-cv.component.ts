@@ -4,7 +4,7 @@ import { Personne } from '../../model/personne';
 @Component({
   selector: 'app-detail-cv',
   templateUrl: './detail-cv.component.html',
-  styleUrls: ['./detail-cv.component.css']
+  styleUrls: []
 })
 export class DetailCvComponent implements OnInit {
 
@@ -12,8 +12,6 @@ export class DetailCvComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit(): void {
-        console.log(this.personne.firstname);
-
+    ngOnInit(){
     }
 }

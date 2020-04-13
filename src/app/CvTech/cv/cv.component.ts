@@ -17,13 +17,16 @@ export class CvComponent implements OnInit {
     selectPersonne(personne) {
         this.selectedPersonne = personne;
     }
-
-    ngOnInit() {
+    user(){
         this.personnes = [
             new Personne(1, 'scott', 'tresor', 25, 'cott.jpg', 'developpeur', 77777),
-            new Personne(2, 'scott', 'tresor', 24, 'Sott.jpg', 'developpeur', 77778),
-            new Personne(3, 'scott', 'tresor', 23, 'trott.jpg', 'developpeur', 77779),
-            new Personne(4, 'scott', 'tresor', 22, 'vott.jpg', 'developpeur', 77780)
+            new Personne(2, 'kasenda', 'tresor', 24, 'Sott.jpg', 'Teacher ', 77778),
+            new Personne(3, 'Meshack', 'Irung', 23, 'trott.jpg', 'Web design', 77779),
+            new Personne(4, 'Franck', 'Kasenda', 22, 'vott.jpg', 'Web master', 77780)
         ];
+    }
+
+    ngOnInit() {
+        this.user()
     }
 }

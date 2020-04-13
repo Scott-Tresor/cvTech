@@ -1,7 +1,7 @@
 <li class="list-group-item" (click) ="selectPersonne()">
     <div class="img-rounded">
-        <img class="img-fluid" src="/" alt="">
+        <img class="img-fluid" src="/{{ personne.path }}" alt="{{ personne.firstname }}">
     </div>
- {{ personne.name }}
+ {{ personne.name }} -- {{ personne.firstname }}
 
 </li>

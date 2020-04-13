@@ -24,12 +24,7 @@ import { HeaderComponent } from './CvTech/header/header.component';
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    ItemCvComponent,
-    DetailCvComponent,
-    ListeCvComponent,
-    CvComponent,
-    HeaderComponent,
+    AppComponent
   ]
 })
 export class AppModule { }

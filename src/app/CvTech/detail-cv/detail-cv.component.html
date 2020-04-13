@@ -1,8 +1,14 @@
 <div class="card">
     <div class="card-heal bg-dark text-center">
-        <h4>{{ personne.name }}- {{ personne.firstname }}</h4>
+        <h4>{{ personne?.name|titlecase }}- {{ personne?.firstname|titlecase }}</h4>
     </div>
+
+    {{ personne.path|image}}
+
     <div class="card-body text-center">
-        {{ personne.job }}
+        {{ personne?.job }}
+    </div>
+    <div class="card-footer text-center">
+        {{ personne?.age }}
     </div>
 </div>

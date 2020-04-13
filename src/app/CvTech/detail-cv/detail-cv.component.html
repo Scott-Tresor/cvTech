@@ -1,12 +1,28 @@
 <div class="card">
-    <div class="card-heal bg-dark text-center">
-        <h4>{{ personne?.name|titlecase }}- {{ personne?.firstname|titlecase }}</h4>
-    </div>
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="https://picsum.photos/200"
+        aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#868e96" /><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image
+            cap</text>
+    </svg>
 
-    <div class="card-body text-center">
+    <div class="card-body">
+        <h5 class="card-title">{{ personne?.name|titlecase }}- {{ personne?.firstname|titlecase }}</h5>
         {{ personne?.job }}
-    </div>
-    <div class="card-footer text-center">
-        {{ personne?.age }}
+        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+        <div class="col">
+            <div class="text-value-xl">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">{{ personne?.age }}</font>
+                </font>
+            </div>
+            <div class="text-uppercase text-muted small">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">{{ personne?.job }}</font>
+                </font>
+            </div>
+        </div>
     </div>
 </div>
+
+

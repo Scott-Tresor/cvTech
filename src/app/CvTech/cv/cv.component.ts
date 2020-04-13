@@ -20,13 +20,12 @@ export class CvComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {
-    this.user();
-  }
-
   selectPersonne(personne)
   {
     this.selectedPersonne = personne;
   }
 
+  ngOnInit() {
+    this.user();
+  }
 }

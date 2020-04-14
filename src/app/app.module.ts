@@ -10,6 +10,8 @@ import { CvComponent } from './CvTech/cv/cv.component';
 import { HeaderComponent } from './CvTech/header/header.component';
 import { ImagePipe } from './CvTech/image.pipe';
 import { EmbaucheComponent } from './CvTech/embauche/embauche.component';
+import { Route } from './app.routing';
+import { RouteurComponent } from './CvTech/routeur/routeur.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { EmbaucheComponent } from './CvTech/embauche/embauche.component';
     HeaderComponent,
     ImagePipe,
     EmbaucheComponent,
+    RouteurComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    Route
   ],
   providers: [],
   bootstrap: [

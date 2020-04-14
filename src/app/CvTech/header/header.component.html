@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm fixed-top  bg-dark" id="navbar">
     <div class="container px-4">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" [routerLink]="['']">
             <strong class="text-uppercase" id="logo">Learnzia</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main"
@@ -9,37 +9,19 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbar-collapse-main">
-            <div class="navbar-collapse-header d-md-none">
-                <div class="row">
-                    <div class="col-6 collapse-brand">
-                        <a href="">
-                            <strong id="logo">Learnzia</strong>
-                        </a>
-                    </div>
-                    <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse"
-                                data-target="#navbar-collapse-main" aria-controls="sidenav-main"
-                                aria-expanded="false" aria-label="Toggle sidenav">
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
-                    <a href="" class="nav-link" role="button">
+                    <a [routerLink]="['cv']" routerLinkActive="active" class="nav-link" role="button">
                         <span class="nav-link-inner--text">Acceuil</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" role="button">
+                    <a [routerLink]="['']" class="nav-link" routerLinkActive="active" role="button">
                         <span class="nav-link-inner--text">Abonnement</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" role="button">
+                    <a [routerLink]="['']"  class="nav-link" routerLinkActive="active" role="button">
                         <span class="nav-link-inner--text">Contact</span>
                     </a>
                 </li>

@@ -22,4 +22,12 @@ export class CvService {
     {
         return this.personne;
     }
+
+    getById(idd: number): Personne
+    {
+        const user = this.personne.find(user=>{
+            return user.id == idd;
+        });
+        return user;
+    }
 }

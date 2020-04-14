@@ -12,6 +12,7 @@ import { ImagePipe } from './CvTech/image.pipe';
 import { EmbaucheComponent } from './CvTech/embauche/embauche.component';
 import { Route } from './app.routing';
 import { RouteurComponent } from './CvTech/routeur/routeur.component';
+import { DetailComponent } from './CvTech/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RouteurComponent } from './CvTech/routeur/routeur.component';
     ImagePipe,
     EmbaucheComponent,
     RouteurComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

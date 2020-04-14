@@ -1,0 +1,10 @@
+<div *ngIf="personnes" class="mt-3">
+    <span *ngFor="let personne of personnes" >
+        <div class="mt-3">
+            <img class="img-fluid rounded-circle" src="assets/images/{{ personne?.path }}" height="150px" width="150px" alt="{{ personne?.firstname }}">
+        </div>
+        <div>
+            {{ personne?.name|titlecase }} -- {{ personne?.firstname|titlecase }}
+        </div>
+    </span>
+</div>

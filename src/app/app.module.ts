@@ -9,6 +9,7 @@ import { ListeCvComponent } from './CvTech/liste-cv/liste-cv.component';
 import { CvComponent } from './CvTech/cv/cv.component';
 import { HeaderComponent } from './CvTech/header/header.component';
 import { ImagePipe } from './CvTech/image.pipe';
+import { EmbaucheComponent } from './CvTech/embauche/embauche.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ImagePipe } from './CvTech/image.pipe';
     CvComponent,
     HeaderComponent,
     ImagePipe,
+    EmbaucheComponent,
   ],
   imports: [
     BrowserModule,

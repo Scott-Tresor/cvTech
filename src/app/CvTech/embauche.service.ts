@@ -15,13 +15,21 @@ export class EmbaucheService {
         return this.personne;
     }
 
-    embaucher(personne: Personne): void
+    embaucher(user: Personne): void
     {
-        let index = this.personne.indexOf(personne);
+        let index = this.personne.indexOf(user);
         if (index < 0 ) {
-            this.personne.push(personne);
+            this.personne.push(user);
         } else {
-            alert(`${personne.name} est deja embaucher`);
+            alert(`${user.name} est deja embaucher`);
+        }
+    }
+
+    debaucher(user): void
+    {
+        let index = this.personne.indexOf(user);
+        if (index >= 0) {
+            this.personne.splice(index, 1);
         }
     }
 }

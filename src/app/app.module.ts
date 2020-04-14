@@ -13,6 +13,8 @@ import { EmbaucheComponent } from './CvTech/embauche/embauche.component';
 import { Route } from './app.routing';
 import { RouteurComponent } from './CvTech/routeur/routeur.component';
 import { DetailComponent } from './CvTech/detail/detail.component';
+import { AddComponent } from './CvTech/add/add.component';
+import { DeleteComponent } from './CvTech/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { DetailComponent } from './CvTech/detail/detail.component';
     EmbaucheComponent,
     RouteurComponent,
     DetailComponent,
+    AddComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,

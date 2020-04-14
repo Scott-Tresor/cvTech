@@ -5,7 +5,8 @@ import { PremierService } from '../../premier.service';
 @Component({
     selector: 'app-cv',
     templateUrl: './cv.component.html',
-    styleUrls: []
+    styleUrls: [],
+    providers: [PremierService]
 })
 export class CvComponent implements OnInit {
 
@@ -19,8 +20,8 @@ export class CvComponent implements OnInit {
     }
     user(){
         this.personnes = [
-            new Personne(1, 'scott', 'tresor', 25, 'cott.jpg', 'developpeur', 77777),
-            new Personne(2, 'kasenda', 'tresor', 24, 'Sott.jpg', 'Teacher ', 77778),
+            new Personne(1, 'scott', 'tresor', 25, 'nest.png', 'developpeur', 77777),
+            new Personne(2, 'kasenda', 'tresor', 24, 'nest.png', 'Teacher ', 77778),
             new Personne(3, 'Meshack', 'Irung', 23, 'trott.jpg', 'Web design', 77779),
             new Personne(4, 'Franck', 'Kasenda', 22, '', 'Web master', 77780)
         ];

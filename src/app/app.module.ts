@@ -16,6 +16,7 @@ import { DetailComponent } from './CvTech/detail/detail.component';
 import { AddComponent } from './CvTech/add/add.component';
 import { DeleteComponent } from './CvTech/delete/delete.component';
 import { ErrorComponent } from './CvTech/error/error.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ErrorComponent } from './CvTech/error/error.component';
     AddComponent,
     DeleteComponent,
     ErrorComponent,
+    ObservableComponent,
   ],
   imports: [
     BrowserModule,

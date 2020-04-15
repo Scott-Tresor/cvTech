@@ -23,6 +23,12 @@ export class CvService {
         return this.personne;
     }
 
+    addPersonne(personne: Personne): void
+    {
+        personne.id = this.personne[this.personne.length].id +1;
+        this.personne.push(personne);
+    }
+
     getById(idd: number): Personne
     {
         const user = this.personne.find(user=>{

@@ -4,9 +4,9 @@
             <label for="name">Name:</label>
             <input type="text" required ngModel name="name" id="name" class="form-control">
         </div>
-        <div class="form-group" *ngIf="input.invalid && input.touched">
+        <div class="form-group">
             <label for="first-name">First-name:</label>
-            <input type="text" #input="ngModel" required ngModel name="first-name" id="first-name" class="form-control">
+            <input type="text"  required ngModel name="first-name" id="first-name" class="form-control">
         </div>
         <div class="form-group">
             <label for="age">Age:</label>
@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
             <label for="path">Picture</label>
-            <input type="file" required ngModel name="path" id="path" class="form-control">
+            <input type="file"  ngModel name="path" id="path" class="form-control">
         </div>
         <div class="text-right">
             <button [disabled]="formulaire.invalid" class="alert alert-success" (click)="addPersonne(formulaire)">Enregistrer</button>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Personne } from '../../model/personne';
+import { CvService } from '../cv.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -9,15 +11,14 @@ import { Personne } from '../../model/personne';
 export class AddComponent implements OnInit {
 
     personne: Personne[];
-    name: string;
 
-  constructor() { }
+    constructor(private cv: CvService) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  addPersonne()
-  {
-    console.log({name: this.name});
-  }
+    addPersonne(formulaire: NgForm)
+    {
+        this.cv.addPersonne(formulaire.value);
+    }
 }

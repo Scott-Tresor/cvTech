@@ -15,5 +15,4 @@ export class EmbaucheComponent implements OnInit {
     ngOnInit(): void {
         this.personnes = this.embauche.getPersonne();
     }
-
 }

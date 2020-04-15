@@ -3,6 +3,7 @@ import { CvComponent } from './CvTech/cv/cv.component';
 import { DetailComponent } from './CvTech/detail/detail.component';
 import { AddComponent } from './CvTech/add/add.component';
 import { DeleteComponent } from './CvTech/delete/delete.component';
+import { ErrorComponent } from './CvTech/error/error.component';
 
 const ROUTING_PATH: Routes = [
     {
@@ -14,6 +15,7 @@ const ROUTING_PATH: Routes = [
         ]
     },
     { path: '', component: CvComponent },
+    { path: '**', component: ErrorComponent },
 ];
 
 export const Route = RouterModule.forRoot(ROUTING_PATH);

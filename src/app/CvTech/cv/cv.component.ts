@@ -19,7 +19,16 @@ export class CvComponent implements OnInit {
         this.selectedPersonne = personne;
     }
     user(){
-        this.personnes = this.cvService.getPersonne();
+        this.cvService.getPersonne().subscribe(
+            (data)=> {
+                this.personnes = data;
+            },
+            (error)=>{
+                console.log(error);
+                alert("L'api a  rencontrer un probleme");
+                this.personnes = this.cvService.allPersonne();
+            }
+        );
     }
 
     ngOnInit() {

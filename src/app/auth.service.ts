@@ -14,5 +14,4 @@ export class AuthService {
     {
         return this.http.post(this.api,created);
     }
-
 }

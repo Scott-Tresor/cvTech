@@ -18,6 +18,7 @@ import { DeleteComponent } from './CvTech/delete/delete.component';
 import { ErrorComponent } from './CvTech/error/error.component';
 import { ObservableComponent } from './observable/observable.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './CvTech/login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     DeleteComponent,
     ErrorComponent,
     ObservableComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

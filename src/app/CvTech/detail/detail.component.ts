@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CvService } from '../cv.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Personne } from '../../model/personne';
 
 @Component({
@@ -11,10 +11,11 @@ import { Personne } from '../../model/personne';
 export class DetailComponent implements OnInit {
 
     personne: Personne;
-    constructor(private cv: CvService, private activeRouter: ActivatedRoute) { }
+    constructor(private cv: CvService, private activeRouter: ActivatedRoute, private route: Router) { }
 
     ngOnInit(): void {
         this.getById(this.personne.id);
+        this.deletePersonne();
     }
 
     getById(id: number)
@@ -26,6 +27,19 @@ export class DetailComponent implements OnInit {
                         this.personne = data;
                     }
                 );
+            }
+        );
+    }
+
+    deletePersonne()
+    {
+        this.cv.deletePersonne(this.personne.id).subscribe(
+            response=>{
+                console.log(response);
+                this.route.navigate(['/cv']);
+            },
+            error=>{
+                console.log(error);
             }
         );
     }

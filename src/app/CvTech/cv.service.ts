@@ -27,7 +27,7 @@ export class CvService {
     {
         return this.http.post<Personne>(this.api, personne);
     }
-    delete(id: number): Observable<Personne>
+    deletePersonne(id: number): Observable<Personne>
     {
         return this.http.delete<Personne>(this.api + '/${id}');
     }

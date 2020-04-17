@@ -26,7 +26,6 @@ export class CvComponent implements OnInit {
             (error)=>{
                 console.log(error);
                 alert("L'api a  rencontrer un probleme");
-                this.personnes = this.cvService.allPersonne();
             }
         );
     }

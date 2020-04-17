@@ -14,9 +14,18 @@ export class DetailComponent implements OnInit {
     constructor(private cv: CvService, private activeRouter: ActivatedRoute) { }
 
     ngOnInit(): void {
+        this.getById(this.personne.id);
+    }
+
+    getById(id: number)
+    {
         this.activeRouter.params.subscribe(
-            (params)=>{
-                this.personne = this.cv.getById(params.id);
+            params=>{
+                this.cv.getById(params.id).subscribe(
+                    data=>{
+                        this.personne = data;
+                    }
+                );
             }
         );
     }

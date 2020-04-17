@@ -18,10 +18,18 @@ export class AddComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    /**
+     * @param formulaire
+     */
     addPersonne(formulaire: NgForm)
     {
-        let index = ['cv'];
-        this.cv.addPersonne(formulaire.value);
-        this.route.navigate(index);
+        this.cv.addPersonne(formulaire.value).subscribe(
+            data=>{
+                this.route.navigate(['/cv']);
+            },
+            error=>{
+                alert("error de connexion a la base des donnees");
+            }
+        );
     }
 }

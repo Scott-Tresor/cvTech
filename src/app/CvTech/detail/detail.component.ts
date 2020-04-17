@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CvService } from '../cv.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Personne } from '../../model/personne';
+import sweetAlert from 'sweetalert2';
 
 @Component({
   selector: 'app-detail',
@@ -39,7 +40,11 @@ export class DetailComponent implements OnInit {
                 this.route.navigate(['/cv']);
             },
             error=>{
-                console.log(error);
+                sweetAlert.fire(
+                    'Oups',
+                    'Impossible de supprimer cette personne',
+                    'warning'
+                );
             }
         );
     }

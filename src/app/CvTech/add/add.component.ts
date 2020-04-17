@@ -3,6 +3,7 @@ import { Personne } from '../../model/personne';
 import { CvService } from '../cv.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import sweetAlert from 'sweetalert2';
 
 @Component({
   selector: 'app-add',
@@ -28,7 +29,7 @@ export class AddComponent implements OnInit {
                 this.route.navigate(['/cv']);
             },
             error=>{
-                alert("error de connexion a la base des donnees");
+                sweetAlert.fire('Error', 'error de connexion a la base des donnees', 'warning')
             }
         );
     }

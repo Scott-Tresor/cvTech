@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Personne } from '../../model/personne';
 import { PremierService } from '../../premier.service';
 import { CvService } from '../cv.service';
+import sweetAlert from 'sweetalert2';
 
 @Component({
     selector: 'app-cv',
@@ -24,8 +25,7 @@ export class CvComponent implements OnInit {
                 this.personnes = data;
             },
             (error)=>{
-                console.log(error);
-                alert("L'api a  rencontrer un probleme");
+                sweetAlert.fire('Error', 'Impossible de se connecter a la base des donnees', 'warning')
             }
         );
     }

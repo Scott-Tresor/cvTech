@@ -1,7 +1,7 @@
 <div class="card-group" *ngIf="personnes">
     <div class="card" *ngFor="let personne of personnes">
         <img src="assets/images/{{ personne?.path }}" class="card-img-top" alt="{{ personne?.firstname }}">
-        <div class="card-body">
+        <div class="card-body text-center">
             <h5 class="card-title">{{ personne?.name|uppercase }} -- {{ personne?.firstname|uppercase }}</h5>
         </div>
     </div>

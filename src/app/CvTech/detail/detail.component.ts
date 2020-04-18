@@ -26,7 +26,7 @@ export class DetailComponent implements OnInit {
         );
     }
 
-    deletePersonne(id: number)
+    deletePersonne()
     {
         this.cv.deletePersonne(this.personne.id).subscribe(
             response=>{

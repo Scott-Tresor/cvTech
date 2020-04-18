@@ -14,13 +14,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  connexion(formulaire)
+  connexion(credantials)
   {
-    console.log(formulaire);
-    this.auth.login(formulaire).subscribe(
+    this.auth.login(credantials).subscribe(
         (response)=>{
-            let token = response.id;
-           localStorage.setItem('token', token);
+            let token = response['id'];
+            localStorage.setItem('token', token);
             this.router.navigate(['/cv']);
         }
     );

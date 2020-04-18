@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Personne } from '../model/personne';
-
+import sweetAlert from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +21,7 @@ export class EmbaucheService {
         if (index < 0 ) {
             this.personne.push(user);
         } else {
-            alert(`${user.name} est deja embaucher`);
+            sweetAlert.fire('Error', 'Impossible de se connecter a la base des donnees', 'warning')
         }
     }
 

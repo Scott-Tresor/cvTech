@@ -1,10 +1,8 @@
-<div *ngIf="personnes" class="mt-3">
-    <span *ngFor="let personne of personnes" >
-        <div class="mt-3">
-            <img class="img-fluid rounded-circle" src="assets/images/{{ personne?.path }}" height="150px" width="150px" alt="{{ personne?.firstname }}">
+<div class="card-group" *ngIf="personnes">
+    <div class="card" *ngFor="let personne of personnes">
+        <img src="assets/images/{{ personne?.path }}" class="card-img-top" alt="{{ personne?.firstname }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ personne?.name|uppercase }} -- {{ personne?.firstname|uppercase }}</h5>
         </div>
-        <div>
-            {{ personne?.name|titlecase }} -- {{ personne?.firstname|titlecase }}
-        </div>
-    </span>
+    </div>
 </div>

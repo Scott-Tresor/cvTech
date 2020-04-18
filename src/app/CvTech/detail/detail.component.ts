@@ -15,15 +15,9 @@ export class DetailComponent implements OnInit {
     constructor(private cv: CvService, private activeRouter: ActivatedRoute, private route: Router) { }
 
     ngOnInit(): void {
-        this.getById(this.personne.id);
-        this.deletePersonne();
-    }
-
-    getById(id: number)
-    {
         this.activeRouter.params.subscribe(
-            params=>{
-                this.cv.getById(params.id).subscribe(
+            (personne)=>{
+                this.cv.getById(personne.id).subscribe(
                     data=>{
                         this.personne = data;
                     }
@@ -32,7 +26,7 @@ export class DetailComponent implements OnInit {
         );
     }
 
-    deletePersonne()
+    deletePersonne(id: number)
     {
         this.cv.deletePersonne(this.personne.id).subscribe(
             response=>{
@@ -42,7 +36,7 @@ export class DetailComponent implements OnInit {
             error=>{
                 sweetAlert.fire(
                     'Oups',
-                    'Impossible de supprimer cette personne',
+                    `Impossible de supprimer cette personne ${error}`,
                     'warning'
                 );
             }

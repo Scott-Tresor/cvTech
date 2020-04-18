@@ -1,8 +1,13 @@
-<li class="list-group-item  alert alert-success" (click) ="selectPersonne()">
-    <div class="img-rounded">
-        <img class="img-fluid" src="assets/images/{{ personne.path }}" height="50px" width="50px" alt="{{ personne?.firstname }}">
+<div class="card mb-3" style="max-width: 540px;" (click)="selectPersonne()">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="assets/images/{{ personne.path }}" class="card-img img-fluid rounded mx-auto d-block" alt="{{ personne?.firstname }}">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ personne?.name|titlecase }} -- {{ personne?.firstname|titlecase }}</h5>
+                <p class="card-text">Job: {{ personne?.job|titlecase }}</p>
+            </div>
+        </div>
     </div>
-    <div>
-        {{ personne?.name|titlecase }} -- {{ personne?.firstname|titlecase }}
-    </div>
-</li>
+</div>

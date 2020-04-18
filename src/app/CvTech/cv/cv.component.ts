@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Personne } from '../../model/personne';
 import { PremierService } from '../../premier.service';
 import { CvService } from '../cv.service';
@@ -9,8 +9,10 @@ import sweetAlert from 'sweetalert2';
     templateUrl: './cv.component.html',
     styleUrls: []
 })
-export class CvComponent implements OnInit {
-
+export class CvComponent implements OnInit, OnDestroy{
+    loading: boolean;
+    error: boolean;
+    timer: any;
     personnes: Personne[];
     selectedPersonne: Personne;
 
@@ -21,9 +23,11 @@ export class CvComponent implements OnInit {
     }
 
     user(){
+        this.loading = true;
         this.cvService.getPersonne().subscribe(
             (data)=> {
                 this.personnes = data;
+                this.loading = false;
             },
             (error)=>{
                 sweetAlert.fire('Error', 'Impossible de se connecter a la base des donnees', 'warning')
@@ -33,7 +37,12 @@ export class CvComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.user()
+        this.user();
         this.premier.logger(this.personnes);
+        this.timer = setInterval(this.user, 300000);
+    }
+
+    ngOnDestroy(): void {
+        clearInterval(this.timer);
     }
 }

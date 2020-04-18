@@ -34,11 +34,11 @@ export class CvService {
     }
     deletePersonne(id: number): Observable<Personne>
     {
-        return this.http.delete<Personne>(this.api + '/${id}');
+        return this.http.delete<Personne>(this.api + `/${id}`);
     }
 
-    getById(idd: number)
+    getById(idd: number): Observable<Personne>
     {
-        return this.http.get(this.api + '/${id}');
+        return this.http.get<Personne>(this.api + `/${idd}`);
     }
 }

@@ -1,7 +1,35 @@
 <app-header></app-header>
 <div class="container">
-    <div class="mt-5">
-        <h3 class="text-center">{{ personne.name }}-{{ personne.firstname }}</h3>
+    <div class="row mt-5 pt-4">
+        <div class="col-md-3 col-lg-3"></div>
+        <div class="col-md-6 col-lg-6">
+            <table class="table">
+                <div class="mb-3 text-center">
+                    <img src="assets/images/{{ personne?.path }}" class="img-fluid img-thumbnail rounded" alt="{{ personne?.firstname }}">
+                </div>
+                <tbody>
+                    <tr>
+                        <th scope="row">Name: </th>
+                        <td>{{ personne?.name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Firstname: </th>
+                        <td>{{ personne?.firstname }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Job: </th>
+                        <td>{{ personne?.job }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CIN: </th>
+                        <td>{{ personne?.cin }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center mt-3">
+                <button class="btn btn-danger" (click)="deletePersonne()">supprimier</button>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3"></div>
     </div>
-    <button class="btn btn-danger" (click)="deletePersonne()">supprimier</button>
 </div>

@@ -1,0 +1,20 @@
+<div class="container mt-5 pt-5">
+    <input
+        type="text"
+        #inputsearch
+        class="form-control"
+        (keyup)="search(inputsearch)"
+    >
+</div>
+
+<ol>
+    <li
+        *ngFor="let personne of searchPersonne"
+        class="list-group-item"
+        (click)="selectPersonne(personne)"
+    >
+        <img src="assets/images/{{ personne.path }}" height="25px" width="25px" class="img-fluid" alt="{{ personne.firstname}}">
+
+        {{ personne.firstname|titlecase}}-{{ personne.name|titlecase}}
+    </li>
+</ol>

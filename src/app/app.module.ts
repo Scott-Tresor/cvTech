@@ -23,6 +23,7 @@ import { LoginInterceptorProvider } from './CvTech/interceptor/login.interceptor
 import { LoginGard } from './CvTech/Login.gard';
 import { LogOutard } from './CvTech/logout.gard';
 import { UpdateComponent } from './CvTech/update/update.component';
+import { SearchComponent } from './CvTech/search/search.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { UpdateComponent } from './CvTech/update/update.component';
     ObservableComponent,
     LoginComponent,
     UpdateComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

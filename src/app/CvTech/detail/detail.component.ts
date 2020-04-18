@@ -42,4 +42,9 @@ export class DetailComponent implements OnInit {
             }
         );
     }
+
+    updatePersonne()
+    {
+        this.route.navigate(['cv/updatecv', this.personne.id]);
+    }
 }

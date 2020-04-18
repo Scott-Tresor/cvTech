@@ -26,8 +26,9 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="text-center mt-3">
-                <button class="btn btn-danger" (click)="deletePersonne()">supprimier</button>
+            <div class="d-flex justify-content-center mt-3">
+                <button class="btn btn-outline-danger" (click)="deletePersonne()">supprimier</button>
+                <button class="btn btn-outline-success" (click)="updatePersonne(personne.id)">Modifier</button>
             </div>
         </div>
         <div class="col-md-3 col-lg-3"></div>

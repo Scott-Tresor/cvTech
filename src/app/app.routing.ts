@@ -7,6 +7,7 @@ import { ErrorComponent } from './CvTech/error/error.component';
 import { LoginComponent } from './CvTech/login/login.component';
 import { LoginGard } from './CvTech/Login.gard';
 import { LogOutard } from './CvTech/logout.gard';
+import { UpdateComponent } from './CvTech/update/update.component';
 
 const ROUTING_PATH: Routes = [
     {
@@ -14,6 +15,7 @@ const ROUTING_PATH: Routes = [
             { path: '', component: CvComponent },
             { path: 'delete/:id', component: DeleteComponent, canActivate: [LoginGard] },
             { path: 'add', component: AddComponent , canActivate: [LoginGard] },
+            { path: 'updatecv/:id', component: UpdateComponent , canActivate: [LoginGard] },
             { path: ':id', component: DetailComponent  },
         ]
     },

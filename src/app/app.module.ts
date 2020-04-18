@@ -22,6 +22,7 @@ import { LoginComponent } from './CvTech/login/login.component';
 import { LoginInterceptorProvider } from './CvTech/interceptor/login.interceptor';
 import { LoginGard } from './CvTech/Login.gard';
 import { LogOutard } from './CvTech/logout.gard';
+import { UpdateComponent } from './CvTech/update/update.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { LogOutard } from './CvTech/logout.gard';
     ErrorComponent,
     ObservableComponent,
     LoginComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,

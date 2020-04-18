@@ -7,6 +7,6 @@ export class PremierService {
 
     constructor() {}
     logger(data){
-        console.log(data);
+
     }
 }

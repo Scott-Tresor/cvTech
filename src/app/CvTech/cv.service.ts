@@ -42,4 +42,9 @@ export class CvService {
     {
         return this.http.get<Personne>(this.api + `/${idd}`);
     }
+
+    updatePersonne(personne: Personne): Observable<Personne>
+    {
+        return this.http.put<Personne>(this.api, personne);
+    }
 }

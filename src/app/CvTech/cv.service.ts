@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class CvService {
     private personne: Personne[];
-    readonly api = '';
+    readonly api = 'http://localhost:3000/api/personnes';
     constructor(private http: HttpClient) {
 
     }
     allPersonne(){
-        this.personne = [
+        return this.personne = [
             new Personne(1, 'scott', 'tresor', 25, 'nest.png', 'developpeur', 77777),
             new Personne(2, 'kasenda', 'tresor', 24, 'nest.png', 'Teacher ', 77778)
         ];
@@ -37,8 +37,8 @@ export class CvService {
         return this.http.delete<Personne>(this.api + '/${id}');
     }
 
-    getById(idd: number): Observable<Personne>
+    getById(idd: number)
     {
-        return this.http.get<Personne>(this.api + '/${id}');
+        return this.http.get(this.api + '/${id}');
     }
 }

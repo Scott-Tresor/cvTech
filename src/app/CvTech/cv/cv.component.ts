@@ -19,6 +19,7 @@ export class CvComponent implements OnInit {
     selectPersonne(personne) {
         this.selectedPersonne = personne;
     }
+
     user(){
         this.cvService.getPersonne().subscribe(
             (data)=> {
@@ -26,6 +27,7 @@ export class CvComponent implements OnInit {
             },
             (error)=>{
                 sweetAlert.fire('Error', 'Impossible de se connecter a la base des donnees', 'warning')
+                this.personnes = this.cvService.allPersonne();
             }
         );
     }

@@ -3,12 +3,12 @@
         <a class="navbar-brand" [routerLink]="['']">
             <strong class="text-uppercase" id="logo">Learnzia</strong>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main"
+        <button (click)="onClick()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': visibility }" id="navbar-collapse-main">
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
                     <a [routerLink]="['']" routerLinkActive="active" class="nav-link">
@@ -30,9 +30,14 @@
                         <span class="nav-link-inner--text">Contact</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!auth.islogout()">
                     <a [routerLink]="['connexion']"  class="nav-link" routerLinkActive="active">
                         <span class="nav-link-inner--text">Connexion</span>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="auth.islogout()">
+                    <a class="nav-link" (click)="logout()">
+                        <span class="nav-link-inner--text">Deconnexion</span>
                     </a>
                 </li>
             </ul>

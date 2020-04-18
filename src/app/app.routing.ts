@@ -5,18 +5,20 @@ import { AddComponent } from './CvTech/add/add.component';
 import { DeleteComponent } from './CvTech/delete/delete.component';
 import { ErrorComponent } from './CvTech/error/error.component';
 import { LoginComponent } from './CvTech/login/login.component';
+import { LoginGard } from './CvTech/Login.gard';
+import { LogOutard } from './CvTech/logout.gard';
 
 const ROUTING_PATH: Routes = [
     {
         path: 'cv', children: [
             { path: '', component: CvComponent },
-            { path: 'delete/:id', component: DeleteComponent },
-            { path: 'add', component: AddComponent },
-            { path: ':id', component: DetailComponent },
+            { path: 'delete/:id', component: DeleteComponent, canActivate: [LoginGard] },
+            { path: 'add', component: AddComponent , canActivate: [LoginGard] },
+            { path: ':id', component: DetailComponent  },
         ]
     },
     { path: '', component: CvComponent },
-    { path: 'connexion', component: LoginComponent },
+    { path: 'connexion', component: LoginComponent, canActivate: [LogOutard] },
     { path: '**', component: ErrorComponent },
 ];
 

@@ -29,6 +29,7 @@ export class CvService {
         if (token) {
             let params = new HttpParams()
                 .set('access_token', token);
+                return this.http.post<Personne>(this.api, personne, {params});
         }
         return this.http.post<Personne>(this.api, personne);
     }

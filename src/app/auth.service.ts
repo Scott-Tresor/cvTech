@@ -14,4 +14,14 @@ export class AuthService {
     {
         return this.http.post(this.api, credantials);
     }
+
+    logout()
+    {
+        return localStorage.getItem('token');
+    }
+
+    islogout()
+    {
+        return !! localStorage.getItem('token');
+    }
 }

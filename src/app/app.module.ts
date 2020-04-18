@@ -19,6 +19,9 @@ import { ErrorComponent } from './CvTech/error/error.component';
 import { ObservableComponent } from './observable/observable.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './CvTech/login/login.component';
+import { LoginInterceptorProvider } from './CvTech/interceptor/login.interceptor';
+import { LoginGard } from './CvTech/Login.gard';
+import { LogOutard } from './CvTech/logout.gard';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,11 @@ import { LoginComponent } from './CvTech/login/login.component';
     Route,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    LoginGard,
+    LogOutard,
+    LoginInterceptorProvider,
+  ],
   bootstrap: [
     AppComponent
   ]

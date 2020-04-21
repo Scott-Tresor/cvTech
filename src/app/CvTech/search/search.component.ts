@@ -11,31 +11,29 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
 
     searchPersonne: Personne[];
-  constructor(private cv: CvService, private router: Router) { }
+    constructor(private cv: CvService, private router: Router) { }
 
-  ngOnInit(): void {
-      this.searchPersonne =[];
-  }
-
-  search(data)
-  {
-    let name = data.value;
-    name = name.trim();
-    if (name.lenght) {
-        this.cv.getbyName(name).subscribe(
-            personne=>{
-                console.log(personne);
-
-                this.searchPersonne = personne;
-            }
-        );
-    } else {
-        this.searchPersonne = []
+    ngOnInit(): void {
+        this.searchPersonne =[];
     }
-  }
 
-  selectPersonne(personne: Personne)
-  {
-    this.router.navigate(['cv', personne.id]);
-  }
+    search(chaine)
+    {
+        let name = chaine.value;
+        name = name.trim();
+        if (name.length) {
+            this.cv.getbyName(name).subscribe(
+                personne=>{
+                    this.searchPersonne = personne;
+                }
+            );
+        } else {
+            this.searchPersonne = []
+        }
+    }
+
+    selectPersonne(personne: Personne)
+    {
+        this.router.navigate(['cv', personne.id]);
+    }
 }

@@ -10,8 +10,6 @@ import sweetAlert from 'sweetalert2';
     styleUrls: []
 })
 export class CvComponent implements OnInit, OnDestroy{
-    loading: boolean;
-    error: boolean;
     timer: any;
     personnes: Personne[];
     selectedPersonne: Personne;
@@ -23,11 +21,9 @@ export class CvComponent implements OnInit, OnDestroy{
     }
 
     user(){
-        this.loading = true;
         this.cvService.getPersonne().subscribe(
             (data)=> {
                 this.personnes = data;
-                this.loading = false;
             },
             (error)=>{
                 sweetAlert.fire('Error', 'Impossible de se connecter a la base des donnees', 'warning')
@@ -39,7 +35,7 @@ export class CvComponent implements OnInit, OnDestroy{
     ngOnInit() {
         this.user();
         this.premier.logger(this.personnes);
-        this.timer = setInterval(this.user, 300000);
+        this.timer = setInterval(this.user, 3000);
     }
 
     ngOnDestroy(): void {

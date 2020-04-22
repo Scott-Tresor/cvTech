@@ -4,11 +4,15 @@ import { Observable } from 'rxjs';
 export class LoginInterceptor implements HttpInterceptor{
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
         let token = localStorage.getItem('token');
-        console.log(req.params)
+
         if (token) {
-            let request = req.clone({
-                params: new HttpParams().set('ACCESS_TOKEN',token)
-            });
+            let keys = req.params.keys();
+            let params = new HttpParams();
+            for(let index = 0; index < keys.length; index++){
+                params = params.append(keys[index], req.params.get(keys[index]));
+            }
+            params.append('access_token', token);
+            const request = req.clone({params});
             return next.handle(request);
         } else {
             return next.handle(req);
